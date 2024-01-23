@@ -1,1 +1,1 @@
-# Embedded-ARM-cortex-modern-c-plus-plus-bare-metal
+# Embedded ARM Cortex Modern C++ Bare-metal
