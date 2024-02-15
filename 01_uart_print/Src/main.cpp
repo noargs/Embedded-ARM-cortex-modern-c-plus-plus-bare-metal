@@ -1,10 +1,26 @@
-#include <stdint.h>
+#include "main.h"
+#include "uart.h"
+#include "debug.hpp"
 
-#if !defined(__SOFT_FP__) && defined(__ARM_FP)
-  #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
-#endif
+
 
 int main(void)
 {
+  uart_init();
 
+  while(1)
+  {
+	printf("Hello from embedded c++ \r\n");
+	for(int i=0; i<700000;i++);
+	debug_log("Hello there!");
+	for(int i=0; i<700000;i++);
+	debug_log2("Hello again!");
+
+
+	// [[OUTPUT]]
+
+	// Hello from embedded c++
+	// [DEBUG] <main:15>: Hello there!
+	// [DEBUG LEVEL2] <main:17>: Hello again!
+  }
 }
